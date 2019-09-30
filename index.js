@@ -104,7 +104,7 @@ function handleContinueClicked() {
 
 
 function generateAnswerElement(item) {
-    return `<li><button class="answer-button" data-answer-id="${item.id}">${item.answer}</button><span class="feedback"> </span></li>`;
+    return `<li><button class="answer-button" data-answer-id="${item.id}">${item.answer}</button><i class="feedback"></i></li>`;
 }
 
 function generateAnswerItemsString(quizAnswerList) {
@@ -126,12 +126,12 @@ function handleAnswerButtonClicked(event) {
     const correctAnswer = getCorrectAnswer(PROGRESS.currentIndex);
     const selectedAnswer = getAnswerIdFromElement(event.currentTarget)
     if (correctAnswer === selectedAnswer) {
-        $(event.currentTarget).next(".feedback").text("correct");
+        $(event.currentTarget).next(".feedback").addClass("fa fa-check");
         PROGRESS.numberCorrect++;
     }
     else {
-        $(event.currentTarget).next(".feedback").text("incorrect");
-        $(event.currentTarget).closest("ul").find(`[data-answer-id=${correctAnswer}]`).next().text("correct");
+        $(event.currentTarget).next(".feedback").addClass("fa fa-times");
+        $(event.currentTarget).closest("ul").find(`[data-answer-id=${correctAnswer}]`).next().addClass("fa fa-check");
     }
     //console.log(selectedAnswer);
     $(".answer-button").prop('disabled', true);
