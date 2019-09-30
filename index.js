@@ -97,7 +97,7 @@ function handleContinueClicked() {
         else {
             updateHeader(`Final Score: ${PROGRESS.numberCorrect}/${PROGRESS.numberTotal}`);
             $('#js-continue-button').text("Try Again?");
-            initialize();
+            resetGame();
         }
     });
 }
@@ -118,34 +118,37 @@ function getCorrectAnswer(index) {
     return STORE[index].correctChoice;
 }
 
-function getAnswerIdFromElement(item) {
+function getSelectedAnswer(item) {
     return $(item).data().answerId;
 }
 
 function handleAnswerButtonClicked(event) {
     const correctAnswer = getCorrectAnswer(PROGRESS.currentIndex);
-    const selectedAnswer = getAnswerIdFromElement(event.currentTarget)
+    const selectedAnswer = getSelectedAnswer(event.currentTarget)
     if (correctAnswer === selectedAnswer) {
-        $(event.currentTarget).next(".feedback").addClass("fa fa-check");
+        $(event.currentTarget).next(".feedback").addClass("fa fa-check").addClass("opaque");
         PROGRESS.numberCorrect++;
     }
     else {
-        $(event.currentTarget).next(".feedback").addClass("fa fa-times");
-        $(event.currentTarget).closest("ul").find(`[data-answer-id=${correctAnswer}]`).next().addClass("fa fa-check");
+        $(event.currentTarget).next(".feedback").addClass("fa fa-times").addClass("opaque");
+        $(event.currentTarget).closest("ul").find(`[data-answer-id=${correctAnswer}]`).next().addClass("fa fa-check").addClass("opaque");
     }
     //console.log(selectedAnswer);
     $(".answer-button").prop('disabled', true);
     $('#js-continue-button').prop('disabled', false);
     updateHeaderWithScore();
-
+    console.log("SCORE: " + PROGRESS.numberCorrect);
 }
 
-function initialize() {
+function resetGame() {
     $('#js-answer-form').hide();
     PROGRESS.numberCorrect = 0;
     PROGRESS.numberTotal = STORE.length;
     PROGRESS.currentIndex = -1;
-    
+}
+
+function initialize() {
+    resetGame()
     $('ul').on('click', 'button', function(event) {
         event.preventDefault();
         handleAnswerButtonClicked(event);
