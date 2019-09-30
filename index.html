@@ -11,33 +11,19 @@
 <body>
 
   <div class="container">
-    <h1>Welcome to Quiz</h1>
-    <form> 
-      <button type="submit">Begin quiz</button>
+    <h1>Vocabulary Quiz!</h1>
+    <form id="js-answer-form">
+      <fieldset>
+          <legend id="js-question"></legend>
+          <ul id="js-answer-section">
+          </ul> 
+      </fieldset>
+    </form>
+    <form id="js-continue-form">
+        <!--label id="js-continue-label" for="continue"></label-->
+        <button type="submit" id ="js-continue-button">Begin</button>
     </form>
   </div>
-
-  <div class="container">
-    <h1>Question 1 (Score: 0/5)</h1>
-        <form> 
-            <label> How much wood could a woodchuck chuck if a woodchuck could chuck wood?</label>
-            <button>5 wood</button> <br>
-            <button>10 wood</button> <br>
-            <button>20 wood</button> <br>
-            <button>30 wood</button> <br>
-            <br>
-            <br>
-            <label> Correct answer is: 30 wood *show after answer clicked*</label>
-            <button>Next Question *show after answer clicked*</button>
-        </form>
-  </div>
-
-  <div class="container">
-        <h1>Score: 4/5</h1>
-        <form> 
-          <button type="submit">Try Again</button>
-        </form>
-      </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="index.js"></script>

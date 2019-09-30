@@ -6,12 +6,21 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+button {
+  
+}
+
 button, input[type="text"] {
   padding: 5px;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .container {
