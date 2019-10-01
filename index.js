@@ -78,10 +78,9 @@ function displayNextQuestion() {
     const answersHtml = generateAnswerItemsString(answerChoices);
     $('#js-answer-section').html(answersHtml);
     $('#js-question').text(question.question);
-    $('#js-answer-form').show();
+    $('#js-answer-form').show(1000);
     $('#js-continue-button').text("continue");
     $('#js-continue-button').prop('disabled', true);
-    //render top screen
 }
 
 function handleContinueClicked() {
@@ -108,7 +107,6 @@ function generateAnswerElement(item) {
 }
 
 function generateAnswerItemsString(quizAnswerList) {
-    console.log("Generating answers options element");
     const items = quizAnswerList.map((item) => generateAnswerElement(item));
     items.sort(() => Math.random() - 0.5);
     return items.join("");
@@ -133,15 +131,13 @@ function handleAnswerButtonClicked(event) {
         $(event.currentTarget).next(".feedback").addClass("fa fa-times").addClass("opaque");
         $(event.currentTarget).closest("ul").find(`[data-answer-id=${correctAnswer}]`).next().addClass("fa fa-check").addClass("opaque");
     }
-    //console.log(selectedAnswer);
     $(".answer-button").prop('disabled', true);
     $('#js-continue-button').prop('disabled', false);
     updateHeaderWithScore();
-    console.log("SCORE: " + PROGRESS.numberCorrect);
 }
 
 function resetGame() {
-    $('#js-answer-form').hide();
+    $('#js-answer-form').hide(1000);
     PROGRESS.numberCorrect = 0;
     PROGRESS.numberTotal = STORE.length;
     PROGRESS.currentIndex = -1;

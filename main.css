@@ -18,6 +18,7 @@ body, button {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   color: #8a2be2;
+  background-color: white;
 }
 
 h1 {
@@ -44,6 +45,7 @@ fieldset {
 legend {
   font-size : 20px;
   margin: 10px;
+  width:content;
 }
 
 ul {
@@ -98,3 +100,4 @@ i {
 .opaque {
   opacity: 1;
 }
+
