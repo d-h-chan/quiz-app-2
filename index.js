@@ -103,7 +103,7 @@ function handleContinueClicked() {
 
 
 function generateAnswerElement(item) {
-    return `<li><button data-answer-id="${item.id}">${item.answer}</button><i class="feedback"></i></li>`;
+    return `<li><button class="js-answer-button"data-answer-id="${item.id}">${item.answer}</button><i class="feedback"></i></li>`;
 }
 
 function generateAnswerItemsString(quizAnswerList) {
@@ -131,7 +131,7 @@ function handleAnswerButtonClicked(event) {
         $(event.currentTarget).next(".feedback").addClass("fa fa-times").addClass("opaque");
         $(event.currentTarget).closest("ul").find(`[data-answer-id=${correctAnswer}]`).next().addClass("fa fa-check").addClass("opaque");
     }
-    $(".answer-button").prop('disabled', true);
+    $(".js-answer-button").prop('disabled', true);
     $('#js-continue-button').prop('disabled', false);
     updateHeaderWithScore();
 }
