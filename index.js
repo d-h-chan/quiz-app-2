@@ -103,7 +103,7 @@ function handleContinueClicked() {
 
 
 function generateAnswerElement(item) {
-    return `<li><button class="answer-button" data-answer-id="${item.id}">${item.answer}</button><i class="feedback"></i></li>`;
+    return `<li><button data-answer-id="${item.id}">${item.answer}</button><i class="feedback"></i></li>`;
 }
 
 function generateAnswerItemsString(quizAnswerList) {
