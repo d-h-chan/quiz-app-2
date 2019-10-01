@@ -101,3 +101,7 @@ i {
   opacity: 1;
 }
 
+#js-answer-form {
+  display: none;
+}
+
