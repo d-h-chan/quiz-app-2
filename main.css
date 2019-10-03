@@ -27,15 +27,16 @@ h1 {
 }
 
 hr {
-  margin: 15px;
+  margin: 15px auto;
   border: none;
   height: 1px;
   color: #8a2be2; /* old IE */
   background-color: #8a2be2; /* Modern Browsers */
+  width: 80%;
+  max-width: 600px;
 }
 
 .container {
-  max-width: 600px;
   margin: 50px auto;
 }
 
@@ -46,7 +47,7 @@ fieldset {
 legend {
   font-size : 20px;
   margin: 10px;
-  min-width: 600px;
+  min-width: 320px;
 }
 
 button {
@@ -55,7 +56,7 @@ button {
   background-color: white;
   border-radius: 6px;
   margin: 5px 0;
-  width: 250px;
+  width: 240px;
 }
 
 button:hover {
@@ -103,3 +104,18 @@ i {
   display: none;
 }
 
+@media only screen and (min-width: 425px) {
+  legend {
+    min-width: 425px;
+  }
+
+  button {
+    width: 250px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  legend {
+    min-width: 600px;
+  }
+}

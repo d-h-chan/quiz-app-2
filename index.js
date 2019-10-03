@@ -8,7 +8,7 @@ const PROGRESS = {
 
 const STORE = [
     {   
-        question: "Click the best synonym for: worn-out", 
+        question: "Click the best synonym for: fatigued", 
         answerChoices: 
         [
             {id: 1, answer: "exhausted"},
