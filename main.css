@@ -27,7 +27,7 @@ h1 {
 }
 
 hr {
-  margin: 15px auto;
+  margin: 20px auto;
   border: none;
   height: 1px;
   color: #8a2be2; /* old IE */
@@ -46,7 +46,7 @@ fieldset {
 
 legend {
   font-size : 20px;
-  margin: 10px;
+  margin: 15px;
   min-width: 320px;
 }
 
