@@ -141,6 +141,7 @@ function resetGame() {
     PROGRESS.numberCorrect = 0;
     PROGRESS.numberTotal = STORE.length;
     PROGRESS.currentIndex = -1;
+    $('#js-continue-button').prop('disabled', false);
 }
 
 function initialize() {

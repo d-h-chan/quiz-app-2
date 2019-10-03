@@ -82,7 +82,6 @@ button:disabled {
 
 li {
   list-style-type: none;  
-  -webkit-padding-start: 0;
   position: relative;
   text-align: center;
 }
